@@ -1,0 +1,124 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ovb-train-9b
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:4
+#SBATCH --cpus-per-task=64
+#SBATCH --time=24:00:00
+#SBATCH --output=logs/ovb-train-9b-%j.out
+#SBATCH --error=logs/ovb-train-9b-%j.err
+
+# Fine-tune FLUX.2 [klein] 9B on a prepared training pool with the settings of
+# the released zero-shot 9B model: 32 B200 GPUs with 192 GB (8 nodes x 4),
+# per-GPU batch 8 without accumulation (global batch 256), lr 2e-6, 1,000
+# warm-up updates, 100K updates, FSDP with fp32 transformer weights under bf16
+# autocast, task-homogeneous batches, no geometry loss mask.
+# The released non-zero-shot 9B model ran on 32 GH200 GPUs with 96 GB and used
+# TRAIN_BATCH_SIZE=3, GRADIENT_ACCUMULATION_STEPS=2 (global batch 192),
+# LOSS_MASK_POLICY=auto and MAX_REFSEG_EXPRESSIONS_PER_IMAGE=8. Export these
+# before sbatch for the non-zero-shot pool or for GPUs with less memory.
+#
+# Submit from the repository root. Pass account, partition and QoS on the
+# command line because they are cluster-specific:
+#   DATASET_SPECS=data/prepared/V1_prepared_seg_geo/manifests/zs_training.json \
+#   MODEL=black-forest-labs/FLUX.2-klein-base-9B \
+#   sbatch --account=<acct> --partition=<part> examples/jobs/train_flux2_klein_9b.job
+#
+# Required environment:
+#   DATASET_SPECS  weighted-pool JSON written by the data setup (TRAIN.md)
+#   MODEL          base model: hub id or local snapshot directory
+# Optional:
+#   OUTPUT_DIR     checkpoint directory (default checkpoints/<run id>)
+#   ENV_SETUP      shell file sourced on every node to activate Python/CUDA
+#   NUM_NODES      overrides the node count read from Slurm
+#   Any variable exported below can be overridden at submission time.
+set -euo pipefail
+
+ROOT=${ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}
+while [[ "$ROOT" != / && ! -d "$ROOT/scripts/training" ]]; do ROOT=$(dirname -- "$ROOT"); done
+[[ -d "$ROOT/scripts/training" ]] || { echo "ERROR: cannot locate the repository; set ROOT" >&2; exit 1; }
+export ROOT
+cd "$ROOT"
+mkdir -p logs
+
+if [[ -n "${ENV_SETUP:-}" ]]; then
+  # shellcheck disable=SC1090
+  . "$ENV_SETUP"
+fi
+
+: "${DATASET_SPECS:?Set DATASET_SPECS to the weighted-pool JSON}"
+: "${MODEL:?Set MODEL to the base model id or snapshot directory}"
+[[ -f "$DATASET_SPECS" ]] || { echo "ERROR: DATASET_SPECS not found: $DATASET_SPECS" >&2; exit 1; }
+export DATASET_SPECS MODEL
+export LOCAL_MODEL=${LOCAL_MODEL:-$MODEL}
+
+# Released zero-shot 9B recipe.
+export RESOLUTION=${RESOLUTION:-512}
+export TRAIN_BATCH_SIZE=${TRAIN_BATCH_SIZE:-8}
+export GRADIENT_ACCUMULATION_STEPS=${GRADIENT_ACCUMULATION_STEPS:-1}
+export LEARNING_RATE=${LEARNING_RATE:-2e-6}
+export LR_SCHEDULER=${LR_SCHEDULER:-constant_with_warmup}
+export LR_WARMUP_STEPS=${LR_WARMUP_STEPS:-1000}
+export WEIGHT_DECAY=${WEIGHT_DECAY:-1e-4}
+export MAX_TRAIN_STEPS=${MAX_TRAIN_STEPS:-100000}
+export SAMPLES_PER_EPOCH=${SAMPLES_PER_EPOCH:-1000000}
+export SEED=${SEED:-42}
+export DATASET_POOL_SEED=${DATASET_POOL_SEED:-42}
+export GUIDANCE_SCALE=${GUIDANCE_SCALE:-3.5}
+
+export TRAIN_ALL_TRANSFORMER_BLOCKS=${TRAIN_ALL_TRANSFORMER_BLOCKS:-1}
+export TRAIN_NON_BLOCK_LAYERS=${TRAIN_NON_BLOCK_LAYERS:-1}
+export TRAIN_OUTPUT_LAYERS=${TRAIN_OUTPUT_LAYERS:-1}
+export TRAIN_INPUT_LAYERS=${TRAIN_INPUT_LAYERS:-0}
+
+export DISTRIBUTED_STRATEGY=${DISTRIBUTED_STRATEGY:-fsdp}
+export FSDP_TRANSFORMER_DTYPE_POLICY=${FSDP_TRANSFORMER_DTYPE_POLICY:-fp32_all}
+export MIXED_PRECISION=${MIXED_PRECISION:-bf16}
+export GRADIENT_CHECKPOINTING=${GRADIENT_CHECKPOINTING:-0}
+export OFFLOAD=${OFFLOAD:-1}
+export ALLOW_TF32=${ALLOW_TF32:-1}
+export PYTORCH_CUDA_ALLOC_CONF=${PYTORCH_CUDA_ALLOC_CONF:-expandable_segments:True}
+
+export TASK_HOMOGENEOUS_BATCHES=${TASK_HOMOGENEOUS_BATCHES:-1}
+export RESAMPLE_DATASET_EACH_EPOCH=${RESAMPLE_DATASET_EACH_EPOCH:-1}
+export SAMPLING_STRATEGY=${SAMPLING_STRATEGY:-with_replacement}
+export MAX_REFSEG_EXPRESSIONS_PER_IMAGE=${MAX_REFSEG_EXPRESSIONS_PER_IMAGE:-2000000}
+export PROMPT_ENCODING_MODE=${PROMPT_ENCODING_MODE:-packed_precompute}
+export LOSS_MASK_POLICY=${LOSS_MASK_POLICY:-disabled}
+export DEPTH_ENCODING=${DEPTH_ENCODING:-relative_inverse_grayscale}
+export DEPTH_TARGET_RESIZE_POLICY=${DEPTH_TARGET_RESIZE_POLICY:-metric_field_then_encode}
+export DEPTH_PROMPT_CONTRACT=${DEPTH_PROMPT_CONTRACT:-campaign_detailed_inverse}
+export NORMAL_TARGET_ENCODING=${NORMAL_TARGET_ENCODING:-vision_banana_x_left_red}
+export NORMAL_TARGET_RESIZE_POLICY=${NORMAL_TARGET_RESIZE_POLICY:-vector_field_renormalize_then_encode}
+export NORMAL_PROMPT_CONTRACT=${NORMAL_PROMPT_CONTRACT:-campaign_short}
+export SKIP_FINAL_INFERENCE=${SKIP_FINAL_INFERENCE:-1}
+
+export CHECKPOINTING_STEPS=${CHECKPOINTING_STEPS:-1000}
+export CHECKPOINTS_TOTAL_LIMIT=${CHECKPOINTS_TOTAL_LIMIT:-2}
+export PERMANENT_CHECKPOINT_STEPS=${PERMANENT_CHECKPOINT_STEPS:-12500,25000,37500,50000,62500,75000,87500,100000}
+
+export DATALOADER_NUM_WORKERS=${DATALOADER_NUM_WORKERS:-16}
+export DATASET_INDEX_NUM_WORKERS=${DATASET_INDEX_NUM_WORKERS:-16}
+export PROMPT_EMBEDDING_BATCH_SIZE=${PROMPT_EMBEDDING_BATCH_SIZE:-16}
+export OMP_NUM_THREADS=${OMP_NUM_THREADS:-4}
+
+# Multi-node rendezvous: one launcher per node, four ranks each.
+export NUM_MACHINES=${NUM_NODES:-${SLURM_NNODES:-1}}
+export NUM_PROCESSES=${NUM_PROCESSES:-$((NUM_MACHINES * 4))}
+export CUDA_VISIBLE_DEVICES=${CUDA_VISIBLE_DEVICES:-0,1,2,3}
+MAIN_PROCESS_IP=$(scontrol show hostnames "${SLURM_JOB_NODELIST:-$(hostname)}" | head -n1)
+export MAIN_PROCESS_IP
+export MAIN_PROCESS_PORT=${MAIN_PROCESS_PORT:-$((20000 + ${SLURM_JOB_ID:-0} % 10000))}
+
+RUN_ID=${RUN_ID:-f2k9b_r${RESOLUTION}_lr${LEARNING_RATE}_b${TRAIN_BATCH_SIZE}-ga${GRADIENT_ACCUMULATION_STEPS}-gpu${NUM_PROCESSES}_$((MAX_TRAIN_STEPS / 1000))k_wu${LR_WARMUP_STEPS}}
+export OUTPUT_DIR=${OUTPUT_DIR:-$ROOT/checkpoints/ovb_${RUN_ID}}
+export PRECOMPUTE_CACHE_DIR=${PRECOMPUTE_CACHE_DIR:-$ROOT/precompute_cache/ovb_${RUN_ID}}
+mkdir -p "$OUTPUT_DIR" "$PRECOMPUTE_CACHE_DIR"
+
+echo "job ${SLURM_JOB_ID:-local}: run=$RUN_ID nodes=$NUM_MACHINES ranks=$NUM_PROCESSES"
+echo "  model=$MODEL"
+echo "  specs=$DATASET_SPECS"
+echo "  out=$OUTPUT_DIR"
+
+srun --nodes="$NUM_MACHINES" --ntasks-per-node=1 --kill-on-bad-exit=1 --label --export=ALL \
+  bash "$ROOT/scripts/training/run_open_visionbanana_pool_flux2_klein.sh"

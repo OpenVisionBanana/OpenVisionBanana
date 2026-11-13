@@ -1,0 +1,13 @@
+# Fetch two complete NYUv2 benchmark examples from the author's TAR.
+route: raw
+data_root: data_depth_smoke
+version: V1_prepared_seg_geo
+datasets: [marigold_depth]
+splits: [eval]
+max_samples: 2
+prepare_workers: 1
+dataset_workers: 1
+acquisition:
+  marigold_depth:
+    datasets: nyuv2
+    frames: 2

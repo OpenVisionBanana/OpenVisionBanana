@@ -1,0 +1,16 @@
+label_id,class_name,r,g,b,hex
+0,building,70,70,70,#464646
+1,ceiling,120,120,120,#787878
+2,floor,152,251,152,#98FB98
+3,food-stuff,255,152,150,#FF9896
+4,furniture-stuff,197,176,213,#C5B0D5
+5,ground,150,100,50,#966432
+6,plant,107,142,35,#6B8E23
+7,raw-material,190,153,153,#BE9999
+8,sky,70,130,180,#4682B4
+9,solid,160,160,160,#A0A0A0
+10,structural,102,102,156,#66669C
+11,textile,230,150,140,#E6968C
+12,wall,102,102,102,#666666
+13,water,0,170,255,#00AAFF
+14,window,255,255,180,#FFFFB4

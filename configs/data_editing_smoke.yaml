@@ -1,0 +1,14 @@
+# Fetch three original/edited pairs from the author's Pico-Banana release.
+route: raw
+data_root: data_editing_smoke
+version: V1_prepared_seg_geo
+datasets: [pico_banana]
+splits: [train]
+prepare_workers: 1
+dataset_workers: 1
+acquisition:
+  pico_banana:
+    limit: 3
+preparation:
+  pico_banana:
+    limit: 3

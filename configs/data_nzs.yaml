@@ -1,0 +1,42 @@
+# Adds official training splits to the ZS sources. Shared by 4B and 9B.
+route: raw
+data_root: data
+version: V1_prepared_seg_geo_nzs
+seed: 42
+download_workers: 4
+prepare_workers: 4
+dataset_workers: 1
+samples_per_epoch: 1000000
+max_samples: null
+overwrite: false
+geometry_policy: base-clean
+training_pool: nzs
+selections:
+  train: [nonzeroshot_pool, hypersim, matterport3d, replica, synscapes, taskonomy, nyuv2, diode, scannet, vkitti2]
+  eval: [marigold_depth, marigold_normals, dsine, diode_normals, imgedit_bench, genai_bench]
+acquisition:
+  hypersim:
+    scenes: all
+  taskonomy:
+    num-buildings: all
+    seed: 42
+preparation:
+  hypersim:
+    all-frames: true
+    strict: true
+  taskonomy:
+    target-samples: 25000
+    strict: true
+  matterport3d:
+    profile: standard
+    strict: true
+    strict-calibration: true
+    write-raw-depth: true
+  replica:
+    samples-per-scene: 500
+    width: 512
+    height: 512
+    hfov: 90
+    camera-world-up-axis: z
+    normal-source: derived_from_depth
+    strict: true

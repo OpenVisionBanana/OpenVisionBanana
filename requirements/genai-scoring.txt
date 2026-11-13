@@ -1,0 +1,31 @@
+# GenAI-Bench scoring environment. Keep this separate from the training
+# environment because scorer stacks may require a different PyTorch release.
+# Install the scorer itself separately at the revision documented in
+# evaluation/image_generation/README.md; it is intentionally installed with
+# --no-deps so it cannot silently replace this environment's pinned stack.
+qwen-vl-utils[decord]
+accelerate>=0.30.0
+transformers>=4.52.0
+huggingface-hub>=0.19.4
+datasets>=2.15.0
+numpy>=1.26.4
+Pillow>=10.0.0
+tqdm>=4.64.1
+opencv-python-headless>=4.11.0.86
+pandas>=2.1.4
+scipy>=1.11.4
+einops
+sentencepiece
+protobuf
+psutil
+ftfy
+requests
+PyYAML
+openai
+tiktoken
+google-genai
+soundfile
+func_timeout
+nltk
+rouge-score
+pycocoevalcap

@@ -1,0 +1,17 @@
+# Raw-conversion example, not a reproduction of the curated published subsets.
+# Relative paths are resolved from the directory where setup_data.py is invoked.
+route: raw
+data_root: data
+version: V1_prepared_seg_geo
+datasets: [hypersim, taskonomy]
+splits: [train]
+seed: 42
+download_workers: 4
+prepare_workers: 32
+dataset_workers: 3
+max_samples: 100000
+samples_per_epoch: 1000000
+overwrite: false
+preparation:
+  hypersim:
+    samples-per-scene: 50

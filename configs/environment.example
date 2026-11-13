@@ -1,0 +1,22 @@
+# Optional portable defaults for the FLUX.2-Klein release.
+# Copy this file outside the repository, edit OVB_STORAGE_ROOT, then source it.
+
+export OVB_STORAGE_ROOT=${OVB_STORAGE_ROOT:-/path/to/open_visionbanana_data}
+export RAW_ROOT=${RAW_ROOT:-$OVB_STORAGE_ROOT/raw}
+export PREPARED_ROOT=${PREPARED_ROOT:-$OVB_STORAGE_ROOT/prepared}
+export MODEL_ROOT=${MODEL_ROOT:-$OVB_STORAGE_ROOT/models}
+export OUTPUT_ROOT=${OUTPUT_ROOT:-$OVB_STORAGE_ROOT/outputs}
+export PYTHON=${PYTHON:-python}
+
+# The public release supports FLUX.2-Klein only. This may be a Hub ID or a
+# local snapshot. The Python CLIs also accept an explicit --model argument.
+export KLEIN_MODEL=${KLEIN_MODEL:-black-forest-labs/FLUX.2-klein-base-9B}
+export MODEL=${MODEL:-$KLEIN_MODEL}
+
+# Versioned prepared tree produced by scripts/prepare_data.py.
+export OVB_PREPARED_VERSION=${OVB_PREPARED_VERSION:-V1_prepared_seg_geo}
+export OVB_PREPARED_ROOT=${OVB_PREPARED_ROOT:-$PREPARED_ROOT/$OVB_PREPARED_VERSION}
+
+# No scheduler, cluster account, partition, or node-local TMPDIR is assumed.
+# Optional evaluator/judge models are configured only by the command that uses
+# them and are not part of the FLUX.2-Klein model interface.

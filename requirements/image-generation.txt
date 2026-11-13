@@ -1,0 +1,3 @@
+# Additional direct dependencies for PD12M training.
+webdataset==1.0.2
+sentencepiece==0.2.2

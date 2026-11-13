@@ -1,0 +1,73 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=ovb-eval
+#SBATCH --nodes=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:4
+#SBATCH --cpus-per-task=32
+#SBATCH --time=12:00:00
+#SBATCH --output=logs/ovb-eval-%j.out
+#SBATCH --error=logs/ovb-eval-%j.err
+
+# Reproduce one benchmark family with the release front ends (EVALUATION.md).
+# Submit from the repository root; pass account, partition and QoS on the
+# command line because they are cluster-specific:
+#   MODEL=black-forest-labs/FLUX.2-klein-base-9B \
+#   CKPT=/models/ovb/9B/zeroshot/checkpoint-100000/transformer \
+#   DATA_ROOT=./data \
+#   sbatch --account=<acct> --partition=<part> examples/jobs/evaluate_release.job semseg [front-end args]
+#
+# TASK (first argument): semseg | instanceseg | refseg | imgedit | generation | depth | normals
+# Required environment:
+#   MODEL      base model: hub id or local snapshot directory
+#   CKPT       fine-tuned transformer directory, or
+#   LORA       directory holding a Diffusers LoRA export (pytorch_lora_weights.safetensors)
+#   DATA_ROOT  prepared evaluation data root (EVALUATION.md, data layout)
+# Optional:
+#   OUT          output root (default eval_outputs/<checkpoint name>)
+#   GPUS         GPUs per node (default 4)
+#   JUDGE_MODEL  ImgEdit judge directory for TASK=imgedit
+#   ENV_SETUP    shell file sourced on every node to activate Python/CUDA
+# Any further arguments are passed to scripts/evaluate_<TASK>.py.
+# Depth and normals shard across the GPUs of one node; submit them with --nodes=1.
+set -euo pipefail
+TASK=${1:?TASK required: semseg|instanceseg|refseg|imgedit|generation|depth|normals}; shift
+
+ROOT=${ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}
+while [[ "$ROOT" != / && ! -d "$ROOT/scripts" ]]; do ROOT=$(dirname -- "$ROOT"); done
+[[ -f "$ROOT/scripts/evaluate_$TASK.py" ]] || { echo "ERROR: no front end for TASK=$TASK under $ROOT/scripts" >&2; exit 1; }
+cd "$ROOT"
+mkdir -p logs
+
+if [[ -n "${ENV_SETUP:-}" ]]; then
+  # shellcheck disable=SC1090
+  . "$ENV_SETUP"
+fi
+
+: "${MODEL:?Set MODEL to the base model id or snapshot directory}"
+: "${DATA_ROOT:?Set DATA_ROOT to the prepared evaluation data root}"
+CKPT=${CKPT:-}; CKPT=${CKPT%/}
+LORA=${LORA:-}; LORA=${LORA%/}
+[[ -n "$CKPT" || -n "$LORA" ]] || { echo "ERROR: set CKPT (transformer directory) or LORA (LoRA directory)" >&2; exit 1; }
+[[ -z "$CKPT" || -z "$LORA" ]] || { echo "ERROR: set only one of CKPT and LORA" >&2; exit 1; }
+SRC=${CKPT:-$LORA}
+CKPT_NAME=$(basename "${SRC%/transformer}")
+OUT=${OUT:-$ROOT/eval_outputs/$CKPT_NAME}
+GPUS=${GPUS:-4}
+NODES=${SLURM_NNODES:-1}
+
+WEIGHTS=()
+[[ -n "$CKPT" ]] && WEIGHTS+=(--transformer-path "$CKPT")
+[[ -n "$LORA" ]] && WEIGHTS+=(--extra-arg "--lora_path=$LORA")
+EXTRA=()
+[[ "$TASK" == imgedit && -n "${JUDGE_MODEL:-}" ]] && EXTRA+=(--judge-model "$JUDGE_MODEL")
+case "$TASK" in
+  depth|normals)
+    [[ "$NODES" == 1 ]] || { echo "ERROR: TASK=$TASK runs on one node; resubmit with --nodes=1" >&2; exit 1; } ;;
+  *) EXTRA+=(--num-nodes "$NODES") ;;
+esac
+
+echo "$(date) task=$TASK nodes=$NODES gpus/node=$GPUS model=$MODEL weights=$SRC out=$OUT/$TASK"
+srun --nodes="$NODES" --ntasks-per-node=1 --kill-on-bad-exit=1 --export=ALL \
+  python "scripts/evaluate_$TASK.py" --model "$MODEL" "${WEIGHTS[@]}" \
+    --data-root "$DATA_ROOT" --output-dir "$OUT/$TASK" --num-gpus "$GPUS" "${EXTRA[@]}" "$@"
+echo "$(date) done"

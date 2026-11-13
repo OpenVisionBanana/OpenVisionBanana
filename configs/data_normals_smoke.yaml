@@ -1,0 +1,12 @@
+# Preserve the first two upstream examples per normal benchmark.
+route: raw
+data_root: data_normals_smoke
+version: V1_prepared_seg_geo
+datasets: [marigold_normals]
+splits: [eval]
+max_samples: 2
+prepare_workers: 1
+dataset_workers: 1
+acquisition:
+  marigold_normals:
+    frames: 2

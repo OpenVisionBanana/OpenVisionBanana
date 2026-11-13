@@ -1,0 +1,7 @@
+# Additional direct dependencies for depth and surface-normal preparation and
+# evaluation. Install after the repository's existing requirements.txt.
+h5py==3.15.1
+imageio==2.37.0
+OpenEXR==3.3.5
+py7zr==1.1.0
+scikit-learn==1.7.2

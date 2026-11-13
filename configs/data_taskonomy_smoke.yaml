@@ -1,0 +1,20 @@
+# Acquire matched samples from official EPFL building archives.
+route: raw
+data_root: data_taskonomy_smoke
+version: source_checks
+seed: 42
+download_workers: 1
+prepare_workers: 1
+dataset_workers: 1
+max_samples: 2
+geometry_policy: base-clean
+selections:
+  train: [taskonomy]
+acquisition:
+  taskonomy:
+    num-buildings: 1
+    seed: 42
+    frames: 2
+preparation:
+  taskonomy:
+    strict: true

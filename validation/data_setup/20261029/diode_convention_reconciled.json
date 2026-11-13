@@ -1,0 +1,775 @@
+{
+  "contract": "diode_identity_reproduced_v2",
+  "expanded_audit": {
+    "acceptance": {
+      "depth_quantity_margin_above_degrees": 3.0,
+      "mean_angle_below_degrees": 35.0,
+      "normal_transform_margin_above_degrees": 10.0,
+      "note": "The absolute paired angle includes differentiation of sparse/noisy laser depth; transform and depth-quantity margins are the convention identification criteria.",
+      "require_identity_normal_transform": true
+    },
+    "depth_archive": {
+      "bytes": 3430963200,
+      "name": "diode_depth.tar",
+      "sha256": "92a6f98650d5dde2bdd5d006a145e62ec77807829a12f4fdc8b05f536c0dc26b"
+    },
+    "depth_quantity_margin_degrees": 4.775614266302288,
+    "intrinsics": {
+      "cx": 512.0,
+      "cy": 384.0,
+      "fx": 886.81,
+      "fy": 927.06
+    },
+    "normal_archive": {
+      "bytes": 1508136960,
+      "name": "diode_surface_normals.tar",
+      "sha256": "9ef681128693f6059186fef75489068ea6d19581e9e633010cf8597fba48f342"
+    },
+    "pixel_stride": 4,
+    "results": {
+      "euclidean_camera_range": {
+        "best": {
+          "mean_angle_degrees": 31.584149381170505,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1
+          ]
+        },
+        "margin_degrees": 23.76970275545461,
+        "pixels": 3113917,
+        "runner_up": {
+          "mean_angle_degrees": 55.353852136625115,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            1
+          ]
+        }
+      },
+      "projective_camera_z": {
+        "best": {
+          "mean_angle_degrees": 26.808535114868217,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1
+          ]
+        },
+        "margin_degrees": 24.824256401781657,
+        "pixels": 3113917,
+        "runner_up": {
+          "mean_angle_degrees": 51.632791516649874,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            -1,
+            1
+          ]
+        }
+      }
+    },
+    "samples": [
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 46704,
+        "id": "00019_00183_indoors_000_010",
+        "projective_camera_z_pixels": 46704
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 44974,
+        "id": "00019_00183_indoors_040_000",
+        "projective_camera_z_pixels": 44974
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48646,
+        "id": "00019_00183_indoors_120_030",
+        "projective_camera_z_pixels": 48646
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47851,
+        "id": "00019_00183_indoors_150_020",
+        "projective_camera_z_pixels": 47851
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48286,
+        "id": "00019_00183_indoors_180_050",
+        "projective_camera_z_pixels": 48286
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47758,
+        "id": "00019_00183_indoors_230_030",
+        "projective_camera_z_pixels": 47758
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47245,
+        "id": "00019_00183_indoors_260_020",
+        "projective_camera_z_pixels": 47245
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48370,
+        "id": "00019_00183_indoors_300_030",
+        "projective_camera_z_pixels": 48370
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47050,
+        "id": "00019_00183_indoors_330_020",
+        "projective_camera_z_pixels": 47050
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47467,
+        "id": "00020_00184_indoors_050_020",
+        "projective_camera_z_pixels": 47467
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48376,
+        "id": "00020_00184_indoors_120_000",
+        "projective_camera_z_pixels": 48376
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 43149,
+        "id": "00020_00184_indoors_170_000",
+        "projective_camera_z_pixels": 43149
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48543,
+        "id": "00020_00184_indoors_290_040",
+        "projective_camera_z_pixels": 48543
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47900,
+        "id": "00020_00185_indoors_050_010",
+        "projective_camera_z_pixels": 47900
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48381,
+        "id": "00020_00185_indoors_190_000",
+        "projective_camera_z_pixels": 48381
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47012,
+        "id": "00020_00185_indoors_330_010",
+        "projective_camera_z_pixels": 47012
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 44529,
+        "id": "00020_00186_indoors_040_000",
+        "projective_camera_z_pixels": 44529
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 45402,
+        "id": "00020_00186_indoors_090_000",
+        "projective_camera_z_pixels": 45402
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 46311,
+        "id": "00020_00186_indoors_140_000",
+        "projective_camera_z_pixels": 46311
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47286,
+        "id": "00020_00186_indoors_190_050",
+        "projective_camera_z_pixels": 47286
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47939,
+        "id": "00020_00186_indoors_240_020",
+        "projective_camera_z_pixels": 47939
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 44222,
+        "id": "00020_00186_indoors_320_000",
+        "projective_camera_z_pixels": 44222
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48280,
+        "id": "00020_00187_indoors_100_030",
+        "projective_camera_z_pixels": 48280
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48645,
+        "id": "00020_00187_indoors_210_020",
+        "projective_camera_z_pixels": 48645
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47785,
+        "id": "00020_00187_indoors_250_020",
+        "projective_camera_z_pixels": 47785
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48548,
+        "id": "00020_00187_indoors_290_020",
+        "projective_camera_z_pixels": 48548
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47832,
+        "id": "00021_00188_indoors_110_040",
+        "projective_camera_z_pixels": 47832
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47946,
+        "id": "00021_00188_indoors_180_010",
+        "projective_camera_z_pixels": 47946
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48232,
+        "id": "00021_00188_indoors_230_020",
+        "projective_camera_z_pixels": 48232
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 44477,
+        "id": "00021_00189_indoors_130_000",
+        "projective_camera_z_pixels": 44477
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47814,
+        "id": "00021_00189_indoors_230_000",
+        "projective_camera_z_pixels": 47814
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 45007,
+        "id": "00021_00190_indoors_050_000",
+        "projective_camera_z_pixels": 45007
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 43077,
+        "id": "00021_00190_indoors_090_030",
+        "projective_camera_z_pixels": 43077
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48091,
+        "id": "00021_00190_indoors_150_050",
+        "projective_camera_z_pixels": 48091
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48686,
+        "id": "00021_00191_indoors_000_040",
+        "projective_camera_z_pixels": 48686
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48605,
+        "id": "00021_00191_indoors_230_010",
+        "projective_camera_z_pixels": 48605
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48670,
+        "id": "00021_00191_indoors_350_030",
+        "projective_camera_z_pixels": 48670
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48624,
+        "id": "00021_00192_indoors_030_030",
+        "projective_camera_z_pixels": 48624
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47649,
+        "id": "00021_00192_indoors_310_010",
+        "projective_camera_z_pixels": 47649
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48620,
+        "id": "00021_00192_indoors_350_030",
+        "projective_camera_z_pixels": 48620
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 38236,
+        "id": "00022_00193_outdoor_000_000",
+        "projective_camera_z_pixels": 38236
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 17632,
+        "id": "00022_00193_outdoor_050_050",
+        "projective_camera_z_pixels": 17632
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 40474,
+        "id": "00022_00193_outdoor_110_040",
+        "projective_camera_z_pixels": 40474
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 17398,
+        "id": "00022_00193_outdoor_180_020",
+        "projective_camera_z_pixels": 17398
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 8432,
+        "id": "00022_00193_outdoor_320_020",
+        "projective_camera_z_pixels": 8432
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 26448,
+        "id": "00022_00194_outdoor_040_020",
+        "projective_camera_z_pixels": 26448
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 39280,
+        "id": "00022_00194_outdoor_110_020",
+        "projective_camera_z_pixels": 39280
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 9638,
+        "id": "00022_00194_outdoor_160_030",
+        "projective_camera_z_pixels": 9638
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 19490,
+        "id": "00022_00194_outdoor_330_010",
+        "projective_camera_z_pixels": 19490
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 41690,
+        "id": "00022_00195_outdoor_140_000",
+        "projective_camera_z_pixels": 41690
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 45288,
+        "id": "00022_00195_outdoor_180_020",
+        "projective_camera_z_pixels": 45288
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 32210,
+        "id": "00022_00195_outdoor_250_000",
+        "projective_camera_z_pixels": 32210
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 42546,
+        "id": "00022_00195_outdoor_310_000",
+        "projective_camera_z_pixels": 42546
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 12119,
+        "id": "00022_00196_outdoor_000_030",
+        "projective_camera_z_pixels": 12119
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 38523,
+        "id": "00022_00196_outdoor_060_010",
+        "projective_camera_z_pixels": 38523
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 33140,
+        "id": "00022_00196_outdoor_100_030",
+        "projective_camera_z_pixels": 33140
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 30690,
+        "id": "00022_00196_outdoor_220_000",
+        "projective_camera_z_pixels": 30690
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 13030,
+        "id": "00022_00196_outdoor_310_010",
+        "projective_camera_z_pixels": 13030
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 36790,
+        "id": "00022_00197_outdoor_040_000",
+        "projective_camera_z_pixels": 36790
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 42478,
+        "id": "00022_00197_outdoor_160_040",
+        "projective_camera_z_pixels": 42478
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 40165,
+        "id": "00022_00197_outdoor_210_030",
+        "projective_camera_z_pixels": 40165
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 32954,
+        "id": "00022_00197_outdoor_250_050",
+        "projective_camera_z_pixels": 32954
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 28941,
+        "id": "00022_00197_outdoor_300_050",
+        "projective_camera_z_pixels": 28941
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 33249,
+        "id": "00023_00198_outdoor_070_020",
+        "projective_camera_z_pixels": 33249
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 40601,
+        "id": "00023_00198_outdoor_240_020",
+        "projective_camera_z_pixels": 40601
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 33593,
+        "id": "00023_00198_outdoor_330_000",
+        "projective_camera_z_pixels": 33593
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 12868,
+        "id": "00023_00199_outdoor_130_020",
+        "projective_camera_z_pixels": 12868
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 42170,
+        "id": "00023_00199_outdoor_220_000",
+        "projective_camera_z_pixels": 42170
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 47577,
+        "id": "00023_00199_outdoor_300_010",
+        "projective_camera_z_pixels": 47577
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 42692,
+        "id": "00023_00200_outdoor_010_040",
+        "projective_camera_z_pixels": 42692
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 36511,
+        "id": "00023_00200_outdoor_080_000",
+        "projective_camera_z_pixels": 36511
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 26644,
+        "id": "00023_00200_outdoor_290_000",
+        "projective_camera_z_pixels": 26644
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 38056,
+        "id": "00023_00200_outdoor_350_030",
+        "projective_camera_z_pixels": 38056
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 35125,
+        "id": "00024_00201_outdoor_080_020",
+        "projective_camera_z_pixels": 35125
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 39446,
+        "id": "00024_00201_outdoor_120_000",
+        "projective_camera_z_pixels": 39446
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 7044,
+        "id": "00024_00201_outdoor_190_020",
+        "projective_camera_z_pixels": 7044
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 32698,
+        "id": "00024_00202_outdoor_070_010",
+        "projective_camera_z_pixels": 32698
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 26825,
+        "id": "00024_00202_outdoor_140_030",
+        "projective_camera_z_pixels": 26825
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 27610,
+        "id": "00024_00202_outdoor_190_020",
+        "projective_camera_z_pixels": 27610
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 13627,
+        "id": "00024_00202_outdoor_340_030",
+        "projective_camera_z_pixels": 13627
+      }
+    ],
+    "samples_per_case": 40,
+    "schema_version": 1,
+    "selected_depth_quantity": "projective_camera_z",
+    "selected_normal_transform_is_identity": true,
+    "status": "pass"
+  },
+  "historical_audit": {
+    "acceptance": {
+      "depth_quantity_margin_above_degrees": 3.0,
+      "mean_angle_below_degrees": 35.0,
+      "normal_transform_margin_above_degrees": 10.0,
+      "note": "The absolute paired angle includes differentiation of sparse/noisy laser depth; transform and depth-quantity margins are the convention identification criteria.",
+      "require_identity_normal_transform": true
+    },
+    "depth_archive": {
+      "bytes": 3430963200,
+      "name": "diode_depth.tar",
+      "sha256": "92a6f98650d5dde2bdd5d006a145e62ec77807829a12f4fdc8b05f536c0dc26b"
+    },
+    "depth_quantity_margin_degrees": 5.471516463582645,
+    "intrinsics": {
+      "cx": 512.0,
+      "cy": 384.0,
+      "fx": 886.81,
+      "fy": 927.06
+    },
+    "normal_archive": {
+      "bytes": 1508136960,
+      "name": "diode_surface_normals.tar",
+      "sha256": "9ef681128693f6059186fef75489068ea6d19581e9e633010cf8597fba48f342"
+    },
+    "pixel_stride": 4,
+    "results": {
+      "euclidean_camera_range": {
+        "best": {
+          "mean_angle_degrees": 32.61160377982519,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1
+          ]
+        },
+        "margin_degrees": 15.537456985237313,
+        "pixels": 627989,
+        "runner_up": {
+          "mean_angle_degrees": 48.1490607650625,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            1
+          ]
+        }
+      },
+      "projective_camera_z": {
+        "best": {
+          "mean_angle_degrees": 27.140087316242543,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            1,
+            1,
+            1
+          ]
+        },
+        "margin_degrees": 14.961629293114086,
+        "pixels": 627989,
+        "runner_up": {
+          "mean_angle_degrees": 42.10171660935663,
+          "permutation": [
+            0,
+            1,
+            2
+          ],
+          "signs": [
+            -1,
+            1,
+            1
+          ]
+        }
+      }
+    },
+    "samples": [
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 46704,
+        "id": "00019_00183_indoors_000_010",
+        "projective_camera_z_pixels": 46704
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 46599,
+        "id": "00019_00183_indoors_250_010",
+        "projective_camera_z_pixels": 46599
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47606,
+        "id": "00020_00184_indoors_170_020",
+        "projective_camera_z_pixels": 47606
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48500,
+        "id": "00020_00186_indoors_070_040",
+        "projective_camera_z_pixels": 48500
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 47715,
+        "id": "00020_00187_indoors_120_000",
+        "projective_camera_z_pixels": 47715
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48423,
+        "id": "00021_00188_indoors_220_040",
+        "projective_camera_z_pixels": 48423
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48327,
+        "id": "00021_00190_indoors_280_000",
+        "projective_camera_z_pixels": 48327
+      },
+      {
+        "case": "indoor",
+        "euclidean_camera_range_pixels": 48620,
+        "id": "00021_00192_indoors_350_030",
+        "projective_camera_z_pixels": 48620
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 38236,
+        "id": "00022_00193_outdoor_000_000",
+        "projective_camera_z_pixels": 38236
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 32949,
+        "id": "00022_00194_outdoor_070_030",
+        "projective_camera_z_pixels": 32949
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 32951,
+        "id": "00022_00195_outdoor_270_000",
+        "projective_camera_z_pixels": 32951
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 19125,
+        "id": "00022_00196_outdoor_300_000",
+        "projective_camera_z_pixels": 19125
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 28675,
+        "id": "00022_00197_outdoor_310_040",
+        "projective_camera_z_pixels": 28675
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 45916,
+        "id": "00023_00199_outdoor_280_010",
+        "projective_camera_z_pixels": 45916
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 34016,
+        "id": "00024_00201_outdoor_100_000",
+        "projective_camera_z_pixels": 34016
+      },
+      {
+        "case": "outdoor",
+        "euclidean_camera_range_pixels": 13627,
+        "id": "00024_00202_outdoor_340_030",
+        "projective_camera_z_pixels": 13627
+      }
+    ],
+    "samples_per_case": 8,
+    "schema_version": 1,
+    "selected_depth_quantity": "projective_camera_z",
+    "selected_normal_transform_is_identity": true,
+    "status": "pass"
+  },
+  "historical_commit": "489a44eb4736eba038ef203ccc3e314767bff9d1",
+  "reconciliation": "Global pixel-weighted axis and depth-quantity identification pass the historical thresholds. Per-frame depth-proxy disagreements remain diagnostics, not grounds for per-frame target transforms. Source normal arrays remain unchanged before declared RGB encoding.",
+  "scope": "Empirical reproduction of the fixed original-label convention; not an author certification or proof of every annotation",
+  "status": "PASS"
+}

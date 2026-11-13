@@ -1,0 +1,13 @@
+# Regenerating the Gemma 4 ReasonSeg rewrites
+# (evaluation/assets/reasonseg_val_rewrites_gemma4_31b.json) or COCO-Object-80 legend
+# pruning cache (evaluation/assets/coco_object_80_val_legend_pruning_gemma4_31b.json).
+# Gemma 4 needs transformers>=5 while requirements.txt pins 4.x, so install this into
+# a separate target and put it first on the path of the VLM pass only:
+#   python -m pip install --target /path/tf5 -r requirements/reasonseg-rewrite-gemma.txt
+#   PYTHONPATH=/path/tf5 python evaluation/refseg/rewrite_reasonseg_qwen.py ...
+#   python scripts/evaluate_semseg.py --mode legend-pruning --vlm-model gemma4_31b --vlm-pythonpath /path/tf5 ...
+# The bundled caches were generated with these versions; evaluation does not need them.
+transformers==5.19.0
+huggingface_hub==2.2.0
+tokenizers==0.23.3
+safetensors==0.8.0

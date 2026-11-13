@@ -1,0 +1,20 @@
+Open Vision Banana
+
+The released model weights are derived from FLUX.2 [klein] Base and are
+distributed under the FLUX Non-Commercial License:
+
+    https://huggingface.co/black-forest-labs/FLUX.2-klein-base-9B/blob/main/LICENSE.md
+
+Use of the weights, and of any output produced with them, is subject to the
+terms of that license. The same license applies to the weights hosted at
+
+    https://huggingface.co/FunAILab/Open-Vision-Banana
+
+The source code in this repository is released under the Apache License,
+Version 2.0 (https://www.apache.org/licenses/LICENSE-2.0). The training script
+is adapted from the diffusers DreamBooth examples
+(https://github.com/huggingface/diffusers/tree/main/examples/dreambooth) and
+keeps their Apache 2.0 notice.
+
+Datasets referenced by this repository keep the licenses of their original
+distributions, which are listed in DATASET.md.

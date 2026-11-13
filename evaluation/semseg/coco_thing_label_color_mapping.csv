@@ -1,0 +1,13 @@
+label_id,class_name,r,g,b,hex
+0,accessory,31,119,180,#1F77B4
+1,animal,255,127,14,#FF7F0E
+2,appliance,44,160,44,#2CA02C
+3,electronic,214,39,40,#D62728
+4,food,148,103,189,#9467BD
+5,furniture,140,86,75,#8C564B
+6,indoor,227,119,194,#E377C2
+7,kitchen,127,127,127,#7F7F7F
+8,outdoor,188,189,34,#BCBD22
+9,person,23,190,207,#17BECF
+10,sports,174,199,232,#AEC7E8
+11,vehicle,255,187,120,#FFBB78

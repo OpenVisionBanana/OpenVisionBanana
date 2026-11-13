@@ -1,0 +1,3 @@
+# Retired compatibility filename. This route always fails before any download.
+# Use data_zs.yaml or data_nzs.yaml for original/author-distributed sources.
+route: published

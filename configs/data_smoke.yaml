@@ -1,0 +1,23 @@
+# Downloads only three frames from one official Hypersim scene ZIP.
+# Use a separate data root. This is not a training-scale dataset.
+route: raw
+data_root: data_smoke
+version: V1_prepared_seg_geo
+seed: 42
+download_workers: 2
+prepare_workers: 1
+dataset_workers: 1
+max_samples: 3
+geometry_policy: base-clean
+selections:
+  train: [hypersim]
+  eval: [genai_bench]
+acquisition:
+  hypersim:
+    scenes: ai_001_001
+    frames: 3
+preparation:
+  hypersim:
+    samples-per-scene: 3
+    min-valid-fraction: 0.05
+    strict: true

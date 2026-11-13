@@ -1,0 +1,16 @@
+# Test a small PD12M selection from the author-maintained dataset.
+route: raw
+data_root: data_generation_smoke
+version: V1_prepared_seg_geo
+datasets: [pd12m]
+splits: [train]
+prepare_workers: 1
+dataset_workers: 1
+acquisition:
+  pd12m:
+    count: 3
+    scan-limit: 100
+    workers: 2
+preparation:
+  pd12m:
+    limit: 3

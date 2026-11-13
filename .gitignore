@@ -1,0 +1,55 @@
+__pycache__
+finetuned_models/
+outputs/
+/datasets/
+dataloader-debug/
+logs/
+logs
+wget-log
+docs/
+ovb_geometry_training_subsets_v1_prepared/
+scratch
+figure_samples/
+eval_outputs_home_bak/
+datasets_archives
+instanceseg_preview/
+eval_outputs
+open_visionbanana_data
+checkpoints/
+checkpoints
+cache/
+cache
+precompute_cache/
+precompute_cache
+logs_scratch
+reports/
+output/
+*.png
+*.jpg
+# README figures.
+!assets/*.png
+!assets/labels/*.png
+!assets/*.jpg
+todo.txt
+results.tex
+results.csv
+# Generated dataset configs (pool/cache members), produced per run.
+configs/generated/*
+# Local environments, core dumps and default data dirs.
+core.*
+.venv/
+/data/
+*_smoke/
+.pytest_cache/
+slurm-*.out
+# Cluster-specific job files, kept locally only.
+/jobs_*/
+# Internal data-release review notes, kept locally only.
+/docs/data_release/
+# Internal data-setup check records; only the DIODE convention report is shipped.
+/validation/*
+!/validation/data_setup/
+/validation/data_setup/*
+!/validation/data_setup/20261029/
+/validation/data_setup/20261029/*
+!/validation/data_setup/20261029/diode_convention_reconciled.json
