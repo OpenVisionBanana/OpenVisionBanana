@@ -18,7 +18,7 @@
 <a href="TRAIN.md">Training</a> &nbsp;·&nbsp;
 <a href="EVALUATION.md">Evaluation</a>
 </p>
-
+ 
 <p align="center">
 Arpit Jadon<sup>1,2*</sup> &emsp;
 Valentinos Pariza<sup>1*</sup> &emsp;
