@@ -13,7 +13,7 @@
 <a href="PROMPTS.md">Prompts</a> &nbsp;·&nbsp;
 <a href="#-model-zoo">Model zoo</a> &nbsp;·&nbsp;
 <a href="#-results">Results</a> &nbsp;·&nbsp;
-<a href="#-qualitative-results">Qualitative results</a> &nbsp;·&nbsp;
+<a href="#qualitative-results">Qualitative results</a> &nbsp;·&nbsp;
 <a href="DATASET.md">Datasets</a> &nbsp;·&nbsp;
 <a href="TRAIN.md">Training</a> &nbsp;·&nbsp;
 <a href="EVALUATION.md">Evaluation</a>
@@ -167,6 +167,8 @@ described in [EVALUATION.md](EVALUATION.md#reproducing-the-paper). The SA-Co/Gol
 image subset and presence gates used for instance segmentation, and the ReasonSeg
 query rewrites, are bundled under [`evaluation/assets/`](evaluation/assets/).
 
+<a id="qualitative-results"></a>
+
 ## 🖼️ Qualitative results
 
 All examples below are predictions of the zero-shot 9B model. Segmentation
@@ -184,7 +186,7 @@ outputs are shown after the colour readout described in the paper.
 
 <p align="center"><img src="assets/qual_refseg.jpg" width="100%" alt="Referring and reasoning segmentation examples with their expressions"></p>
 
-<img src="assets/labels/depth.png" width="194" alt="Depth estimation"> &nbsp; <img src="assets/labels/normals.png" width="282" alt="Surface normal estimation"> &nbsp; Two in-the-wild photos. The inverse depth map is shown as predicted and, for the first photo, also with a colour map.
+<img src="assets/labels/depth.png" width="194" alt="Depth estimation"> &nbsp; <img src="assets/labels/normals.png" width="282" alt="Surface normal estimation"> &nbsp; Two in-the-wild photos. The inverse depth map is shown as predicted and with a colour map.
 
 <p align="center"><img src="assets/qual_geometry.jpg" width="100%" alt="Depth and surface normal predictions on two in-the-wild photos"></p>
 
