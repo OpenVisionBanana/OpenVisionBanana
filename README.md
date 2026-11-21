@@ -4,8 +4,9 @@
 
 <p align="center">
 <a href="https://arxiv.org/abs/2611.15844"><img src="https://img.shields.io/badge/Paper-b31b1b?logo=arxiv&logoColor=white" alt="Paper"></a>
-<a href="https://openvisionbanana.github.io/"><img src="https://img.shields.io/badge/Project-Page-1f72b8.svg" alt="Project Page"></a>
-<a href="https://huggingface.co/FunAILab/Open-Vision-Banana"><img src="https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Models-ffcc4d.svg" alt="Models"></a>
+<a href="https://openvisionbanana.github.io/"><img src="assets/website_badge.svg" alt="Website"></a>
+<a href="https://huggingface.co/FunAILab/Open-Vision-Banana"><img src="https://img.shields.io/badge/Models-ffcc4d?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAAqCAMAAAAQwSIQAAABIFBMVEX%2B0x4AAAD%2BpQz%2Bmwr%2ByBr%2BuBT%2FfwD%2B2CD%2FqAIyNkb%2F%2FwD%2FnAn%2FmAj%2FnAr%2FAAD%2FnQr%2FnQr%2Fogz%2FnQpMSEG0lyzXtCX%2FoQv%2FnQr%2FoQv%2BKT7%2Fogv%2Fowv%2FvQCLdzX%2FoQvlvCMkKklOOkTwNTxqO0JkWT2kjS%2FCoypXUj%2BAbTeahTH%2FVQD%2BVzbtxCEeLEk%2FQUR%2BbzeDOkGidDS%2BoireRDvAnyv9TTj%2BbTH%2BiSz%2FqSb%2FzAD%2F4xoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBdEzOAAAAYHRSTlP%2BAPz7%2FPoD%2Fgb%2FAS4TSwGv0Sxp%2F%2F%2F%2FrItu%2F0%2BPBP%2FO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8D%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8F%2FwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQ%2B92RAAAC4UlEQVR42nWVB3viMAyGFXlkB0Ig5KDM7nF73%2F%2F%2FYSfJdkgo%2BGmbVH6tfJJsGaLxSOzpvbqxZ7MwZrMosvWqWy7X3So5W3xGZ8TW66lCN9S2q4m%2FQpO9bBkzMmRBm4uP97SNCmaNhjA0r%2Bh45h1to5xZiGEwtFHYFic10MMlKtRwNmKNuC167xA056gMXBqMZ3ZI2yq5BjM%2ByZJqQCfZFK%2FBjM%2B8dHA6ZohXYdAKc6cFpCqFUiFAfQE3OHHOQfLRBdeLu%2BY5MN8em3nQonLJi%2Fi2U5873aTp3iO7lMYiOF8GOotyhVIKWBCw3zjiYU%2F%2FzMlKjjROk6oS2lKMRj6H%2BnH%2FvHnwvj%2FfN%2BQbxZOXApyRCQvRiuyL%2B0Fw%2Fx7ItauwoSRar8TJ1u7vYFdBb2XhN0xXUTHeIJdyqF0OgVwnalCane6X7N4u0cWQbpq54xdP6fw9fabkLk2bzXx%2BT8%2F0R6%2BK6WGUzh7DJm1SPw67PpI%2ByshmEzScqFhTQrhAh9v09pCmT5whsiKf65m1vjp0bBT9GP6Fzccvx%2BPt8Xj49AaG7EbmVOGUUOHXdBRispIP2otfP8j4viAYGTRUSrWm0x9BQp7ZNfBcrPnlz6%2FXn6%2B%2FNddbAztiGjGvEuC6U%2FMQGzpgcAr44AB9lhHKIdhqihKJIceaJ1xpnOtgY2JSvYCNlmwlHSZGlC%2BHE0MLyX3MMyyRcghRzSGjeNHyAY%2BLR6PoKZ%2BWtAAFacAJMU6CO6M6HFXjpFAAJdHU0HTs9LpyGr%2F%2FTdyfSgKoadVEF5wdFq5P%2FUO7fIRmyPsEnZIV5UgLDydfQxpGSpQoMaM0x6PEG0oKlaTgWlKfoqVD19zvB7ppTqO0N%2BBNtZUur%2FuW7W8SH4mWrr8tiZQ9aFdtQJgqy9lsVZY4MLWrKHpxvYpbXN61U66Amq7DTZCvvaXtEk9Jj63cRZfkeV3%2FpWdirU1o9qamIYuzZHyT9DepvfAS3v4DkqwiuFMgwosAAAAASUVORK5CYII%3D" alt="Models"></a>
+<a href="https://huggingface.co/spaces/arpitjadon/Open-Vision-Banana"><img src="https://img.shields.io/badge/Demo-ffcc4d?logo=data%3Aimage%2Fpng%3Bbase64%2CiVBORw0KGgoAAAANSUhEUgAAAC0AAAAqCAMAAAAQwSIQAAABIFBMVEX%2B0x4AAAD%2BpQz%2Bmwr%2ByBr%2BuBT%2FfwD%2B2CD%2FqAIyNkb%2F%2FwD%2FnAn%2FmAj%2FnAr%2FAAD%2FnQr%2FnQr%2Fogz%2FnQpMSEG0lyzXtCX%2FoQv%2FnQr%2FoQv%2BKT7%2Fogv%2Fowv%2FvQCLdzX%2FoQvlvCMkKklOOkTwNTxqO0JkWT2kjS%2FCoypXUj%2BAbTeahTH%2FVQD%2BVzbtxCEeLEk%2FQUR%2BbzeDOkGidDS%2BoireRDvAnyv9TTj%2BbTH%2BiSz%2FqSb%2FzAD%2F4xoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBdEzOAAAAYHRSTlP%2BAPz7%2FPoD%2Fgb%2FAS4TSwGv0Sxp%2F%2F%2F%2FrItu%2F0%2BPBP%2FO%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8D%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8F%2FwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABQ%2B92RAAAC4UlEQVR42nWVB3viMAyGFXlkB0Ig5KDM7nF73%2F%2F%2FYSfJdkgo%2BGmbVH6tfJJsGaLxSOzpvbqxZ7MwZrMosvWqWy7X3So5W3xGZ8TW66lCN9S2q4m%2FQpO9bBkzMmRBm4uP97SNCmaNhjA0r%2Bh45h1to5xZiGEwtFHYFic10MMlKtRwNmKNuC167xA056gMXBqMZ3ZI2yq5BjM%2ByZJqQCfZFK%2FBjM%2B8dHA6ZohXYdAKc6cFpCqFUiFAfQE3OHHOQfLRBdeLu%2BY5MN8em3nQonLJi%2Fi2U5873aTp3iO7lMYiOF8GOotyhVIKWBCw3zjiYU%2F%2FzMlKjjROk6oS2lKMRj6H%2BnH%2FvHnwvj%2FfN%2BQbxZOXApyRCQvRiuyL%2B0Fw%2Fx7ItauwoSRar8TJ1u7vYFdBb2XhN0xXUTHeIJdyqF0OgVwnalCane6X7N4u0cWQbpq54xdP6fw9fabkLk2bzXx%2BT8%2F0R6%2BK6WGUzh7DJm1SPw67PpI%2ByshmEzScqFhTQrhAh9v09pCmT5whsiKf65m1vjp0bBT9GP6Fzccvx%2BPt8Xj49AaG7EbmVOGUUOHXdBRispIP2otfP8j4viAYGTRUSrWm0x9BQp7ZNfBcrPnlz6%2FXn6%2B%2FNddbAztiGjGvEuC6U%2FMQGzpgcAr44AB9lhHKIdhqihKJIceaJ1xpnOtgY2JSvYCNlmwlHSZGlC%2BHE0MLyX3MMyyRcghRzSGjeNHyAY%2BLR6PoKZ%2BWtAAFacAJMU6CO6M6HFXjpFAAJdHU0HTs9LpyGr%2F%2FTdyfSgKoadVEF5wdFq5P%2FUO7fIRmyPsEnZIV5UgLDydfQxpGSpQoMaM0x6PEG0oKlaTgWlKfoqVD19zvB7ppTqO0N%2BBNtZUur%2FuW7W8SH4mWrr8tiZQ9aFdtQJgqy9lsVZY4MLWrKHpxvYpbXN61U66Amq7DTZCvvaXtEk9Jj63cRZfkeV3%2FpWdirU1o9qamIYuzZHyT9DepvfAS3v4DkqwiuFMgwosAAAAASUVORK5CYII%3D" alt="Demo"></a>
 </p>
 
 <p align="center">
@@ -53,9 +54,13 @@ Yuki M. Asano<sup>1</sup>
 
 ## 📰 Updates
 
+- We have added a [Hugging Face demo](https://huggingface.co/spaces/arpitjadon/Open-Vision-Banana) that runs the 9B non-zero-shot checkpoint on ZeroGPU.
 - Data pipelines, training and evaluation code, and model weights are all released.
 
 ## 🚀 Quick start
+
+To try the model without installing anything, open the
+[online demo](https://huggingface.co/spaces/arpitjadon/Open-Vision-Banana), which runs the 9B non-zero-shot checkpoint on ZeroGPU.
 
 Install the pinned requirements, which include the CUDA 12.8 builds of PyTorch 2.11
 (see [Installation](MAIN.md#installation) for the full environment):
@@ -167,6 +172,22 @@ described in [EVALUATION.md](EVALUATION.md#reproducing-the-paper). The SA-Co/Gol
 image subset and presence gates used for instance segmentation, and the ReasonSeg
 query rewrites, are bundled under [`evaluation/assets/`](evaluation/assets/).
 
+## 🗺️ Repository guide
+
+Evaluating a released model does not require the training datasets.
+
+| I want to… | Start here |
+|---|---|
+| 🔧 Install the project | [Installation](MAIN.md#installation) |
+| 🖼️ Run a model on my own image | [Online demo](https://huggingface.co/spaces/arpitjadon/Open-Vision-Banana), [quick start](#-quick-start), [prompts for every task](PROMPTS.md) |
+| 📏 Evaluate a pretrained or OVB model | [Evaluation commands](EVALUATION.md#task-commands) |
+| 📄 Reproduce the paper tables | [Paper reproduction](EVALUATION.md#reproducing-the-paper) |
+| 📥 Download and prepare training data | [ZS/NZS data setup](DATASET.md#complete-zs-and-nzs-recipes) |
+| 🔐 Obtain datasets that require registration | [Download and manual inputs](DATASET.md#how-to-download-the-data) |
+| 🏋️ Fine-tune a model | [Training](TRAIN.md#run) |
+| 🖥️ Submit on a Slurm cluster | [`examples/jobs/train_flux2_klein_9b.job`](examples/jobs/train_flux2_klein_9b.job), [`examples/jobs/evaluate_release.job`](examples/jobs/evaluate_release.job) |
+| 🧪 Try a small data-setup check | [Smoke tests](DATASET.md#small-smoke-tests) |
+
 <a id="qualitative-results"></a>
 
 ## 🖼️ Qualitative results
@@ -193,22 +214,6 @@ outputs are shown after the colour readout described in the paper.
 <img src="assets/labels/imgedit.png" width="161" alt="Image editing"> &nbsp; <img src="assets/labels/generation.png" width="271" alt="Text-to-image generation"> &nbsp; Image editing on ImgEdit-Bench instructions and text-to-image generation on GenAI-Bench prompts, both after perception tuning.
 
 <p align="center"><img src="assets/qual_editing_generation.jpg" width="100%" alt="Image editing pairs and text-to-image samples"></p>
-
-## 🗺️ Repository guide
-
-Evaluating a released model does not require the training datasets.
-
-| I want to… | Start here |
-|---|---|
-| 🔧 Install the project | [Installation](MAIN.md#installation) |
-| 🖼️ Run a model on my own image | [Quick start](#-quick-start), [prompts for every task](PROMPTS.md) |
-| 📏 Evaluate a pretrained or OVB model | [Evaluation commands](EVALUATION.md#task-commands) |
-| 📄 Reproduce the paper tables | [Paper reproduction](EVALUATION.md#reproducing-the-paper) |
-| 📥 Download and prepare training data | [ZS/NZS data setup](DATASET.md#complete-zs-and-nzs-recipes) |
-| 🔐 Obtain datasets that require registration | [Download and manual inputs](DATASET.md#how-to-download-the-data) |
-| 🏋️ Fine-tune a model | [Training](TRAIN.md#run) |
-| 🖥️ Submit on a Slurm cluster | [`examples/jobs/train_flux2_klein_9b.job`](examples/jobs/train_flux2_klein_9b.job), [`examples/jobs/evaluate_release.job`](examples/jobs/evaluate_release.job) |
-| 🧪 Try a small data-setup check | [Smoke tests](DATASET.md#small-smoke-tests) |
 
 ## 📄 License
 
